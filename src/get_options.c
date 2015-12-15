@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:26:56 by tpayen            #+#    #+#             */
-/*   Updated: 2015/09/29 17:14:27 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 16:43:30 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@ static int	active_options(char c)
 		return (OPT_D);
 	else if (c == 'g')
 		return (OPT_G | OPT_L);
+	else if (c == 'f')
+		return (OPT_F | OPT_A);
+	else if (c == 'n')
+		return (OPT_N | OPT_L);
+	else if (c == 'o')
+		return (OPT_O | OPT_L);
 	return (0);
 }
 

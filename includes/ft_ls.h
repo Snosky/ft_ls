@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:10:47 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 16:22:45 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 16:43:03 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <time.h>
 # include <sys/errno.h>
 
-# define VALID_ARG "lRartdg1"
+# define VALID_ARG "lRartdg1fno"
 
 # define OPT_L 0x01
 # define OPT_REC 0x02
@@ -32,6 +32,9 @@
 # define OPT_T 0x10
 # define OPT_D 0x20
 # define OPT_G 0x40
+# define OPT_F 0x80
+# define OPT_N 0x100
+# define OPT_O 0x200
 
 int	g_options;
 

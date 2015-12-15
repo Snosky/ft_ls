@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 12:52:35 by tpayen            #+#    #+#             */
-/*   Updated: 2015/09/29 17:21:52 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 16:30:45 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		sort_files(t_list *list)
 	{
 		if (can(OPT_T))
 			sort_list(list, opt_t_sort);
-		else
+		else if (!can(OPT_F))
 			sort_list(list, alpha_sort);
 	}
 }
