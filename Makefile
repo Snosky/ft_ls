@@ -31,12 +31,14 @@ SRC_FILES =	main.c		\
 		alpha_sort.c	\
 		g_name.c	\
 		opt_t_sort.c	\
+		opt_last_access_sort.c	\
 		sort_list.c	\
 		show_files.c	\
 		get_files.c	\
 		create_path.c	\
 		get_spaces.c	\
 		opt_l_show.c	\
+		opt_m_show.c	\
 		get_pwname.c	\
 		get_grname.c	\
 		show_acl.c	\

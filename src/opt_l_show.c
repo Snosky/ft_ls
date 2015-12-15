@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/11 17:23:21 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 16:42:50 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 17:48:55 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,7 @@ void		opt_l_show(t_list *lst)
 	show_info(g_name(lst), 0, 0);
 	if (S_ISLNK(g_stat(lst)->st_mode))
 		show_link(lst);
+	if (can(OPT_P) && S_ISDIR(g_stat(lst)->st_mode))
+		ft_putchar('/');
 	ft_putchar('\n');
 }

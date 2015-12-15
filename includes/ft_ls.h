@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:10:47 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 16:43:03 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 18:05:20 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <time.h>
 # include <sys/errno.h>
 
-# define VALID_ARG "lRartdg1fno"
+# define VALID_ARG "lRartdg1fnomp"
 
 # define OPT_L 0x01
 # define OPT_REC 0x02
@@ -35,6 +35,8 @@
 # define OPT_F 0x80
 # define OPT_N 0x100
 # define OPT_O 0x200
+# define OPT_M 0x400
+# define OPT_P 0x800
 
 int	g_options;
 
@@ -68,6 +70,7 @@ void			get_files(t_list *files, char *path);
 char			*create_path(char *name, char *path);
 void			get_spaces(t_list *lst);
 void			opt_l_show(t_list *lst);
+void			opt_m_show(t_list *lst);
 char			*get_pwname(t_list *lst);
 char			*get_grname(t_list *lst);
 void			show_acl(t_list *lst);

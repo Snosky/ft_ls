@@ -6,35 +6,55 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:26:56 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 16:43:30 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 18:09:02 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-static int	active_options(char c)
+static void	remove_option(int i)
+{
+	if (can(i))
+		g_options ^= i;
+}
+
+static void	active_options_more(char c)
+{
+	if (c == 'm')
+	{
+		remove_option(OPT_L);
+		g_options |= OPT_M;
+	}
+	else if (c == 'p')
+		g_options |= OPT_P;
+}
+
+static void	active_options(char c)
 {
 	if (c == 'l')
-		return (OPT_L);
+		g_options |= OPT_L;
+	else if (c == '1')
+		remove_option(OPT_L);
 	else if (c == 'R')
-		return (OPT_REC);
+		g_options |= OPT_REC;
 	else if (c == 'a')
-		return (OPT_A);
+		g_options |= OPT_A;
 	else if (c == 'r')
-		return (OPT_REV);
+		g_options |= OPT_REV;
 	else if (c == 't')
-		return (OPT_T);
+		g_options |= OPT_T;
 	else if (c == 'd')
-		return (OPT_D);
+		g_options |= OPT_D;
 	else if (c == 'g')
-		return (OPT_G | OPT_L);
+		g_options |= (OPT_G | OPT_L);
 	else if (c == 'f')
-		return (OPT_F | OPT_A);
+		g_options |= (OPT_F | OPT_A);
 	else if (c == 'n')
-		return (OPT_N | OPT_L);
+		g_options |= (OPT_N | OPT_L);
 	else if (c == 'o')
-		return (OPT_O | OPT_L);
-	return (0);
+		g_options |= (OPT_O | OPT_L);
+	else
+		active_options_more(c);
 }
 
 int			get_options(char **av)
@@ -57,7 +77,7 @@ int			get_options(char **av)
 				if (!ft_strchr(VALID_ARG, av[y][x]))
 					err_arg(av[y][x]);
 				else
-					g_options |= active_options(av[y][x]);
+					active_options(av[y][x]);
 	}
 	return (y);
 }

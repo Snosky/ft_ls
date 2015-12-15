@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   can.c                                              :+:      :+:    :+:   */
+/*   opt_m_show.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/27 12:25:02 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 18:00:00 by tpayen           ###   ########.fr       */
+/*   Created: 2015/12/15 17:00:02 by tpayen            #+#    #+#             */
+/*   Updated: 2015/12/15 17:49:53 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ls.h"
 
-int	can(int i)
+void	opt_m_show(t_list *lst)
 {
-	return ((g_options & i) ? 1 : 0);
+	ft_putstr(g_name(lst));
+	if (can(OPT_P) && S_ISDIR(g_stat(lst)->st_mode))
+		ft_putchar('/');
+	if (lst->next)
+		ft_putstr(", ");
 }
