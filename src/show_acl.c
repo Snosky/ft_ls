@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/11 18:04:09 by tpayen            #+#    #+#             */
-/*   Updated: 2015/04/29 16:23:12 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 18:53:46 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static char	acl(char *s)
 		return ('@');
 	else if (acl_get_link_np(create_path(s, g_path), ACL_TYPE_EXTENDED))
 		return ('+');
-	return ('\0');
+	return (' ');
 }
 
 void		show_acl(t_list *lst)

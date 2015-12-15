@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/11 17:23:21 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 17:48:55 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 19:08:04 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	show_link(t_list *lst)
 void		opt_l_show(t_list *lst)
 {
 	show_acl(lst);
-	show_info(ft_itoa(g_stat(lst)->st_nlink), g_space->link + 1, 0);
+	show_info(ft_itoa(g_stat(lst)->st_nlink), g_space->link, 0);
 	if (!can(OPT_G))
 		show_info(get_pwname(lst), g_space->user + 1, 1);
 	if (!can(OPT_O))
