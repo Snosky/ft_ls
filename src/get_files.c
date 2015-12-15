@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 17:16:10 by tpayen            #+#    #+#             */
-/*   Updated: 2015/09/29 17:45:49 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/15 18:34:35 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ static t_list	*ft_opendir(char *path, int *total)
 	if ((dir = opendir(path)))
 	{
 		while ((f = readdir(dir)))
-			if ((f->d_name[0] != '.' && !can(OPT_A)) || can(OPT_A))
+			if (can(OPT_A) || (can(OPT_A_M) && (ft_strcmp(f->d_name, ".") &&
+					ft_strcmp(f->d_name, ".."))) ||
+					(!can(OPT_A) && f->d_name[0] != '.'))
 				if ((t = ft_lstnew(new_file(f->d_name, path), sizeof(t_file))))
 				{
 					ft_lstpush(&ret, t);

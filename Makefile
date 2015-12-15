@@ -31,7 +31,6 @@ SRC_FILES =	main.c		\
 		alpha_sort.c	\
 		g_name.c	\
 		opt_t_sort.c	\
-		opt_last_access_sort.c	\
 		sort_list.c	\
 		show_files.c	\
 		get_files.c	\
