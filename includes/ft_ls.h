@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:10:47 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/17 18:17:26 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 19:56:28 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@
 # define OPT_P 0x800
 # define OPT_A_M 0x1000
 # define OPT_G_COLOR 0x2000
+# define OPT_ONE 0x4000
 
 int	g_options;
 
@@ -49,6 +50,7 @@ typedef struct	s_space
 	int	user;
 	int	group;
 	int	size;
+	int	name;
 }				t_space;
 
 typedef struct stat	t_stat;
@@ -87,4 +89,6 @@ int				opt_t_sort(t_list *lst1, t_list *lst2, int rev);
 int				alpha_sort(t_list *lst1, t_list *lst2, int rev);
 
 char			*show_color(t_list *file);
+
+void		show_column(t_list *file);
 #endif

@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:26:56 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/17 18:16:39 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 19:57:28 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,20 @@ static void	active_options_more(char c)
 		g_options |= OPT_A_M;
 	else if (c == 'G')
 		g_options |= OPT_G_COLOR;
+	else if (c == '1')
+	{
+		remove_option(OPT_L);
+		g_options |= OPT_ONE;
+	}
 }
 
 static void	active_options(char c)
 {
 	if (c == 'l')
+	{
+		remove_option(OPT_ONE);
 		g_options |= OPT_L;
-	else if (c == '1')
-		remove_option(OPT_L);
+	}
 	else if (c == 'R')
 		g_options |= OPT_REC;
 	else if (c == 'a')

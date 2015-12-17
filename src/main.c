@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:19:25 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/17 18:10:06 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 19:30:49 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static void	init_space(void)
 	g_space->user = 0;
 	g_space->group = 0;
 	g_space->size = 0;
+
+	g_space->name = 0;
 }
 
 static void	do_files(t_list *files)
