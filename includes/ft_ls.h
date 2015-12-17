@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:10:47 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 18:52:50 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 18:17:26 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 # include <sys/acl.h>
 # include <time.h>
 # include <sys/errno.h>
+# include <fcntl.h>
 
-# define VALID_ARG "lRartdg1fnompA"
+# define VALID_ARG "lRartdg1fnompAG"
 
 # define OPT_L 0x01
 # define OPT_REC 0x02
@@ -38,6 +39,7 @@
 # define OPT_M 0x400
 # define OPT_P 0x800
 # define OPT_A_M 0x1000
+# define OPT_G_COLOR 0x2000
 
 int	g_options;
 
@@ -83,4 +85,6 @@ struct stat		*g_stat(t_list *file);
 char			*g_name(t_list *file);
 int				opt_t_sort(t_list *lst1, t_list *lst2, int rev);
 int				alpha_sort(t_list *lst1, t_list *lst2, int rev);
+
+char			*show_color(t_list *file);
 #endif

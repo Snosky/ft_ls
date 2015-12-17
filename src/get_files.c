@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 17:16:10 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 18:34:35 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 17:29:11 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ static t_list	*ft_opendir(char *path, int *total)
 				{
 					ft_lstpush(&ret, t);
 					if (can(OPT_L))
-					{
 						*total += g_stat(t)->st_blocks;
-						get_spaces(t);
-					}
+					get_spaces(t);
 				}
 		closedir(dir);
 	}

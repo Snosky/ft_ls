@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/11 17:23:21 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 19:08:04 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 18:50:31 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		opt_l_show(t_list *lst)
 		show_info(get_grname(lst), g_space->group + 1, 1);
 	show_info(ft_itoa(g_stat(lst)->st_size), g_space->size, 0);
 	show_date(g_stat(lst)->st_mtime);
-	show_info(g_name(lst), 0, 0);
+	show_info(show_color(lst), 0, 0);
 	if (S_ISLNK(g_stat(lst)->st_mode))
 		show_link(lst);
 	if (can(OPT_P) && S_ISDIR(g_stat(lst)->st_mode))

@@ -44,6 +44,7 @@ SRC_FILES =	main.c		\
 		reset_space.c	\
 		err_arg.c	\
 		err_path.c	\
+		show_color.c	\
 
 DIRS = obj
 

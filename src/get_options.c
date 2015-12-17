@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:26:56 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/15 18:31:09 by tpayen           ###   ########.fr       */
+/*   Updated: 2015/12/17 18:16:39 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static void	active_options_more(char c)
 		g_options |= OPT_P;
 	else if (c == 'A')
 		g_options |= OPT_A_M;
+	else if (c == 'G')
+		g_options |= OPT_G_COLOR;
 }
 
 static void	active_options(char c)
