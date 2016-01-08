@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 11:10:47 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/17 19:56:28 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/01/08 17:54:21 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,5 @@ struct stat		*g_stat(t_list *file);
 char			*g_name(t_list *file);
 int				opt_t_sort(t_list *lst1, t_list *lst2, int rev);
 int				alpha_sort(t_list *lst1, t_list *lst2, int rev);
-
 char			*show_color(t_list *file);
-
-void		show_column(t_list *file);
 #endif

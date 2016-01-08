@@ -12,7 +12,7 @@
 
 EXEC = ft_ls
 
-CC = gcc
+CC = clang
 CFLAGS = -Werror -Wextra -Wall
 
 INCLUDES = -I libft/ -I includes
@@ -45,7 +45,6 @@ SRC_FILES =	main.c		\
 		err_arg.c	\
 		err_path.c	\
 		show_color.c	\
-		show_column.c	\
 
 DIRS = obj
 

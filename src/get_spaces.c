@@ -6,7 +6,7 @@
 /*   By: tpayen <tpayen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/11 17:02:09 by tpayen            #+#    #+#             */
-/*   Updated: 2015/12/17 19:30:27 by tpayen           ###   ########.fr       */
+/*   Updated: 2016/01/08 17:53:35 by tpayen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	get_spaces(t_list *lst)
 			g_space->size = i;
 	}
 	else
+	{
 		if ((i = ft_strlen(g_name(lst))) > g_space->name)
 			g_space->name = i;
+	}
 }
